@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var Twit = require('twit');
 const { BitlyClient } = require('bitly');
 const bitly = new BitlyClient('f79c7ba529e328cef89ca22ecba1092b9f785cac', {});
-var result;
+
 
 
 var fs = require('fs'),
