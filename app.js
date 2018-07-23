@@ -23,8 +23,6 @@ var testLink;
 const download = require('image-downloader')
 var data;
 var title;
-var dealLink;
-var ebayLink;
 var tweet;
 var percentOff;
 
