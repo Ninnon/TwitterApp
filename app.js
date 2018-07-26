@@ -7,6 +7,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var Twit = require('twit');
 const { BitlyClient } = require('bitly');
 const bitly = new BitlyClient('f79c7ba529e328cef89ca22ecba1092b9f785cac', {});
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> a352a37feced3e737e6cb9a930e898279064d07f
 var fs = require('fs'),
     request = require('request'),
     path = require('path'),
@@ -79,6 +85,7 @@ request(dailyDeals, function (error, response, body) {
 
                         percentOff = Math.floor((data.items[counter].originPrice.slice(1).replace(",", "") - data.items[counter].price.toFixed(2).replace(",", "")) / data.items[counter].originPrice.slice(1).replace(",", "") * 100);
                         tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
+
                                 "AWESOME DEAL! \n\n" + title + "\n\nGet it for just $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
                                 "STEAL! \n\n" + title + "\n\nOn sale for $" + price.toFixed(2) + ", " + percentOff + "% OFF!\n\n" + result.url,
                                 "GET IT FAST! \n\n" + title + "\n\n Just $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
@@ -93,6 +100,7 @@ request(dailyDeals, function (error, response, body) {
                         tweet = ["SALE! \n\n" + title + "\n\n Click link below for sale details! \n\n" + result.url,
                                 "DISCOUNTED! \n\n" + title + "\n\n Click link for discount details! \n\n" + result.url,
                                 "BIG DISCOUNT! \n\n" + title + "\n\n Click link for pricing details! \n\n" + result.url];
+
                     }
 
                     console.log('Opening an image...');
