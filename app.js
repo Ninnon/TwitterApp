@@ -85,7 +85,7 @@ request(dailyDeals, function (error, response, body) {
                                 "GET IT FAST! \n\n" + title + "\n\n Just $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
                                 percentOff + "% OFF!\n\n" + title + "\n\nOn sale for just $" + price.toFixed(2) + "!\n\n" + result.url,
                                 percentOff + "% DISCOUNT!\n\n" + title + "\n\n Only $" + price.toFixed(2) + "!\n\n" + result.url,
-                                "Another great deal! \n\n" + title + "Discounted at just $" + price.toFixed(2) + ", regularly " + originPrice + "!\n\n" + result.url];
+                                "Another great deal! \n\n" + title + "\n\nDiscounted at just $" + price.toFixed(2) + ", regularly " + originPrice + "!\n\n" + result.url];
                     } else if (data.items[counter].price != null && data.items[counter].originPrice == null) {
                         tweet = ["SALE! \n\n" + title + "\n\n Only $" + price.toFixed(2) + "!\n\n" + result.url,
                                 "GREAT DEAL! \n\n" + title + "\n\n Just $" + price.toFixed(2) + !"\n\n" + result.url];
