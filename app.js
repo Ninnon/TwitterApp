@@ -7,9 +7,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var Twit = require('twit');
 const { BitlyClient } = require('bitly');
 const bitly = new BitlyClient('f79c7ba529e328cef89ca22ecba1092b9f785cac', {});
-
-
-
 var fs = require('fs'),
     request = require('request'),
     path = require('path'),
@@ -82,15 +79,24 @@ request(dailyDeals, function (error, response, body) {
 
                         percentOff = Math.floor((data.items[counter].originPrice.slice(1).replace(",", "") - data.items[counter].price.toFixed(2).replace(",", "")) / data.items[counter].originPrice.slice(1).replace(",", "") * 100);
                         tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
-                        "AWESOME DEAL! \n\n" + title + "\n\nGet it for just $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
-                        "STEAL! \n\n" + title + "\n\nOn sale for $" + price.toFixed(2) + ", " + percentOff + "% OFF!\n\n" + result.url,
-                        "GET IT FAST! \n\n" + title + "\n\nJust $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
-                        percentOff + "% OFF!\n\n" + title + "\n\nOn sale for just $" + price.toFixed(2) + "!\n\n" + result.url];
+
+
+                                "AWESOME DEAL! \n\n" + title + "\n\nGet it for just $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
+                                "STEAL! \n\n" + title + "\n\nOn sale for $" + price.toFixed(2) + ", " + percentOff + "% OFF!\n\n" + result.url,
+                                "GET IT FAST! \n\n" + title + "\n\nJust $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
+                                percentOff + "% OFF!\n\n" + title + "\n\nOn sale for just $" + price.toFixed(2) + "!\n\n" + result.url,
+                                percentOff + "% DISCOUNT!\n\n" + title + "\n\nOnly $" + price.toFixed(2) + "!\n\n" + result.url,
+                                "Another great deal! \n\n" + title + "\n\nDiscounted at just $" + price.toFixed(2) + ", regularly " + originPrice + "!\n\n" + result.url];
                     } else if (data.items[counter].price != null && data.items[counter].originPrice == null) {
-                        tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + "!\n\n" + result.url];
+                        tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + "!\n\n" + result.url,
+                                "GREAT DEAL! \n\n" + title + "\n\nJust $" + price.toFixed(2) + !"\n\n" + result.url];
                     }
                     else {
-                        tweet = ["SALE! \n\n" + title + "\n\nClick link below for sale details! \n\n" + result.url];
+                        tweet = ["SALE! \n\n" + title + "\n\nClick link below for sale details! \n\n" + result.url,
+                                "DISCOUNTED! \n\n" + title + "\n\nClick link for discount details! \n\n" + result.url,
+                                "BIG DISCOUNT! \n\n" + title + "\n\nClick link for pricing details! \n\n" + result.url];
+
+
                     }
 
                     console.log('Opening an image...');
