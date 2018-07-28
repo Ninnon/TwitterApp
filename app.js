@@ -84,13 +84,13 @@ request(dailyDeals, function (error, response, body) {
                         tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
                         "AWESOME DEAL! \n\n" + title + "\n\nGet it for just $" + price.toFixed(2) + ", retail " + originPrice + "!\n\n" + result.url,
                         "STEAL! \n\n" + title + "\n\nOn sale for $" + price.toFixed(2) + ", " + percentOff + "% OFF!\n\n" + result.url,
-                        "GET IT FAST! \n\n" + title + "\n\n Just $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
+                        "GET IT FAST! \n\n" + title + "\n\nJust $" + price.toFixed(2) + ", down from " + originPrice + "!\n\n" + result.url,
                         percentOff + "% OFF!\n\n" + title + "\n\nOn sale for just $" + price.toFixed(2) + "!\n\n" + result.url];
                     } else if (data.items[counter].price != null && data.items[counter].originPrice == null) {
-                        tweet = ["SALE! \n\n" + title + "\n\n Only $" + price.toFixed(2) + "!\n\n" + result.url];
+                        tweet = ["SALE! \n\n" + title + "\n\nOnly $" + price.toFixed(2) + "!\n\n" + result.url];
                     }
                     else {
-                        tweet = ["SALE! \n\n" + title + "\n\n Click link below for sale details! \n\n" + result.url];
+                        tweet = ["SALE! \n\n" + title + "\n\nClick link below for sale details! \n\n" + result.url];
                     }
 
                     console.log('Opening an image...');
